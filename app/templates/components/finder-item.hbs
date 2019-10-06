@@ -1,0 +1,15 @@
+<div style="min-width:200px;border-right:1px solid #d4d0d0;height: 100vh;">
+    {{#each data as |content|}}
+        <div style="padding:10px 20px; cursor:pointer" {{action "itemClicked" content}}>{{content-item content=content}}</div>
+    {{/each}}
+</div>
+<div>
+    <div class="container-fluid">
+        {{#if contentSelected.length}}
+            {{finder-item data=contentSelected class="displayFlex" fileSelected=fileSelected contentSelected=newContent}}
+        {{/if}}
+        {{#if fileSelected}}
+            <div style="min-width:400px;white-space: normal;">{{fileContent}}</div>
+        {{/if}}
+    </div>
+</div>
